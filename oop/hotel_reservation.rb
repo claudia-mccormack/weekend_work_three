@@ -31,35 +31,20 @@ end
 # The add_a_fridge method
 # The add_a_crib method
 # The add_a_custom_amenity method
-reservation = HotelReservation.new(customer_name: "Smith", date: "Jan 21", room_number: 210, amenities: [])
+reservation = HotelReservation.new(
+  customer_name: "Smith",
+  date: "Jan 21",
+  room_number: 210,
+  amenities: []
+  )
 
 puts "Change Room:"
 puts "Current room: #{reservation.room_number}"
-
+reservation.room_number = 125
 puts "New room: #{reservation.room_number}"
 
-puts "Add Fridge:"
 reservation.add_a_fridge
-result = @amenities.include?("fridge")
-if result == true
-  puts "Fridge added!"
-else puts "No fridge"
-end
-
-puts "Add crib:"
 reservation.add_a_crib
-result = @amenities.add_a_crib
-if result == true
-  puts "Crib added!"
-else
-  puts "No cribs"
-end
-
-puts "Add custom:"
 reservation.add_a_custom_amenity("breakfast")
-result = @amenities.include?("breakfast")
-if result == true
-  puts "Enjoy breakfast!"
-else
-  puts "The kitchen is closed"
-end
+
+p @amenities
