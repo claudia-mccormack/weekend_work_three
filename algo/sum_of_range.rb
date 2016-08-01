@@ -3,6 +3,15 @@
 # numbers, inclusive.
 
 def sum_of_range(array)
+  # range = (highest - lowest) + 1
+  # start with lowest number
+  # add number to number + 1
+  # do this range times
+  array.sort!
+  a = array.first # 1
+  b = array.last # 4
+
+  (a..b).inject { |sum, n| sum + n}
 
 end
 

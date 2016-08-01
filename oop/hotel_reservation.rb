@@ -1,5 +1,5 @@
-# In this exercise, we've already implemented the class, and you have to write the 
-# driver code. 
+# In this exercise, we've already implemented the class, and you have to write the
+# driver code.
 # This class represents a hotel reservation.
 
 class HotelReservation
@@ -31,4 +31,32 @@ end
 # The add_a_fridge method
 # The add_a_crib method
 # The add_a_custom_amenity method
+reservation = HotelReservation.new(customer_name: "Smith", date: "Jan 21", room_number: 210, amenities: [])
 
+puts "Change Room:"
+puts "Current room: #{reservation.room_number}"
+reservation[:room_number] = 324
+puts "New room: #{reservation.room_number}"
+
+puts "Add Fridge:"
+resevation.add_a_fridge
+if amenities.include?("fridge")
+  puts "Fridge added!"
+else
+  puts "No fridges available."
+end
+
+puts "Add crib:"
+reservation.add_a_crib
+if amenities.include?("crib")
+  puts "Crib added!"
+else
+  puts "No cribs available"
+end
+
+puts "Add custom:"
+reservation.add_a_custom_amenity("breakfast")
+if amenities.include?("breakfast")
+  puts "Enjoy breakfast!"
+else
+  puts ""
