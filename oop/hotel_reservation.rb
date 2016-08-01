@@ -35,28 +35,31 @@ reservation = HotelReservation.new(customer_name: "Smith", date: "Jan 21", room_
 
 puts "Change Room:"
 puts "Current room: #{reservation.room_number}"
-reservation[:room_number] = 324
+
 puts "New room: #{reservation.room_number}"
 
 puts "Add Fridge:"
-resevation.add_a_fridge
-if amenities.include?("fridge")
+reservation.add_a_fridge
+result = @amenities.include?("fridge")
+if result == true
   puts "Fridge added!"
-else
-  puts "No fridges available."
+else puts "No fridge"
 end
 
 puts "Add crib:"
 reservation.add_a_crib
-if amenities.include?("crib")
+result = @amenities.add_a_crib
+if result == true
   puts "Crib added!"
 else
-  puts "No cribs available"
+  puts "No cribs"
 end
 
 puts "Add custom:"
 reservation.add_a_custom_amenity("breakfast")
-if amenities.include?("breakfast")
+result = @amenities.include?("breakfast")
+if result == true
   puts "Enjoy breakfast!"
 else
-  puts ""
+  puts "The kitchen is closed"
+end
